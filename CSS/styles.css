@@ -239,6 +239,10 @@ img {
     opacity: 0;
     pointer-events: none;
 }
+.backdrop.is-hidden .modal {
+    transform: scale(1.2) translate(-50%, -50%);
+}
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -247,6 +251,9 @@ img {
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
     z-index: 2;
+
+    opacity: 1;
+    transition: opacity 250ms var(--transition-cubic);
     
 }
 .modal {
@@ -256,8 +263,12 @@ img {
     padding: 40px 39px 40px 41px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.9);
     background: #FFFFFF;
+    
+    
+    transition: transform 250ms var(--transition-cubic);
+
     
 }
 .btn-close {
@@ -734,7 +745,8 @@ img {
 
 .link-address{
     text-decoration: none;
-    color: var(--address)
+    color: var(--address);
+    transition: link-address 250ms var(--transition-cubic) 
 }
 
 .footer-item:not(:last-child) {
@@ -749,7 +761,8 @@ img {
 
 .footer-link {
     text-decoration: none;
-    color: var(--footer-link)
+    color: var(--footer-link);
+    transition: footer-link 250ms var(--transition-cubic)
 }
 
 .footer-link:hover, 
